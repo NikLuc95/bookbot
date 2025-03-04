@@ -23,3 +23,14 @@ def count_book_characters(path_to_file):
         count[character] = list_characters.count(character)
 
     return count
+
+def char_list(dictionary):
+    
+    char_list = []
+    
+    for char, count in dictionary.items():
+        char_list.append({"character": char, "count": count})
+    
+    char_list.sort(key=lambda x: x["count"], reverse=True)
+    
+    return char_list
