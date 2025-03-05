@@ -1,17 +1,17 @@
+import sys 
+
 from stats import count_book_text, count_book_characters, char_list
 
-path = "/home/nik/workspace/github.com/NikLuc95/bookbot/books/frankenstein.txt"
+count = count_book_characters(sys.argv[1])
 
-count = count_book_characters(path)
-
-num_words = count_book_text(path)
+num_words = count_book_text(sys.argv[1])
 
 dicts = char_list(count)
 
 def main():
 
     print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {path}")
+    print(f"Analyzing book found at {sys.argv[1]}")
     print("----------- Word Count ----------")
     print(f"Found {num_words} total words")
     print("--------- Character Count -------")
